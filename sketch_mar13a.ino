@@ -58,8 +58,8 @@ const int NUM_PADS = 5;
 float thresh_high[NUM_PADS] = {750, 1400, 1000, 1250, 1500};
 float thresh_low[NUM_PADS] =  {600, 1300,  900, 1100, 1400};
 #else
-float thresh_high[NUM_PADS] = {250, 600, 300, 400, 500};
-float thresh_low[NUM_PADS] =  {200, 500, 250, 300, 400};
+float thresh_high[NUM_PADS] = {250, 600, 300, 400, 400};
+float thresh_low[NUM_PADS] =  {200, 500, 250, 300, 350};
 #endif
 uint8_t port_num[NUM_PADS] = {A3, A4, A1, A0, A2};
 int data[NUM_PADS];
