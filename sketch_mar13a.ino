@@ -3,7 +3,7 @@
 //#define MANUAL_CALIBRATION 1
 //#define LOGGING 1
 #define JOYSTICK 1
-#define LED_DEBUG 200
+//#define LED_DEBUG 800
 
 #ifdef JOYSTICK
 #include <Joystick.h>
@@ -25,27 +25,33 @@ const int TX_LED = LED_BUILTIN_TX;
 
 bool ledState = LOW;
 
-const int NUM_PADS = 5;
+const int NUM_PADS = 10;
 #ifdef JOYSTICK
-float thresh_low[NUM_PADS] =  {150, 200, 200, 150, 150};
+float thresh_low[NUM_PADS] =  {150, 210, 200, 150, 180,
+								95, 130, 85, 110, 160};
 float thresh_high[NUM_PADS] = {thresh_low[0] + 5,
 							   thresh_low[1] + 5,
 							   thresh_low[2] + 5,
 							   thresh_low[3] + 5,
-							   thresh_low[4] + 5};
+							   thresh_low[4] + 5,
+							   thresh_low[5] + 5,
+							   thresh_low[6] + 5,
+							   thresh_low[7] + 5,
+							   thresh_low[8] + 5,
+							   thresh_low[9] + 5};
 #else
-float thresh_high[NUM_PADS] = {250, 600, 300, 400, 400};
-float thresh_low[NUM_PADS] =  {200, 500, 250, 300, 350};
+float thresh_high[NUM_PADS] = {250, 600, 300, 400, 400, 1, 1, 1, 1, 1};
+float thresh_low[NUM_PADS] =  {200, 500, 250, 300, 350, 1, 1, 1, 1, 1};
 #endif
-uint8_t port_num[NUM_PADS] = {A3, A4, A1, A0, A2};
+uint8_t port_num[NUM_PADS] = {A3, A4, A1, A0, A2, A11, A9, A8, A7, A6};
 int data[NUM_PADS];
-char *port_names[NUM_PADS] = {"TL", "TR", "C", "BL", "BR"};
+char *port_names[NUM_PADS] = {"L_TL", "L_TR", "L_C", "L_BL", "L_BR", "R_TL", "R_TR", "R_C", "R_BL", "R_BR"};
 #ifdef JOYSTICK
-char button[NUM_PADS] = {0, 1, 2, 3, 4};
+char button[NUM_PADS] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 #else
-char key[NUM_PADS] = {'q', 'e', 's', 'z', 'c'};
+char key[NUM_PADS] = {'q', 'e', 's', 'z', 'c', 'u', 'o', 'k', 'm', '.'};
 #endif
-bool state[NUM_PADS] = {false, false, false, false, false};
+bool state[NUM_PADS] = {false, false, false, false, false, false, false, false, false, false};
 
 void setup()
 {
