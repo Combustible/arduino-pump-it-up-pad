@@ -27,8 +27,8 @@ bool ledState = LOW;
 
 const int NUM_PADS = 10;
 #ifdef JOYSTICK
-float thresh_low[NUM_PADS] =  {150, 210, 200, 150, 180,
-								95, 130, 85, 110, 160};
+float thresh_low[NUM_PADS] =  {150, 210, 200, 150, 190,
+								115, 140, 100, 110, 160};
 float thresh_high[NUM_PADS] = {thresh_low[0] + 5,
 							   thresh_low[1] + 5,
 							   thresh_low[2] + 5,
